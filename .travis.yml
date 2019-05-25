@@ -4,7 +4,6 @@ sudo: false
 
 php:
   - 7.2
-  - 7.1
 
 env:
   - LARAVEL=5.8.*
@@ -16,7 +15,7 @@ matrix:
   fast_finish: true
 
 before_install:
-  - composer require "laravel/framework:${LARAVEL}" --update-with-dependencies
+  - composer require "laravel/framework:${LARAVEL}" --update-with-all-dependencies
 
 before_script:
   - travis_retry composer install --prefer-source --no-interaction
