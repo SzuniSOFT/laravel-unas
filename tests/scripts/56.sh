@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o verbose
+
 cd ../../
 cp composer.json original-composer.json
 cp phpunit-dist.xml phpunit-dist-56.xml
