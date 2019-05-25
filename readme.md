@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/SzuniSOFT/laravel-unas.svg?branch=master)](https://travis-ci.org/SzuniSOFT/laravel-unas)
 
 # Laravel Unas
 
