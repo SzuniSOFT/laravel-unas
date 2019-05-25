@@ -2,7 +2,6 @@
 
 set -o verbose
 
-cd ../../
 cp composer.json original-composer.json
 cp phpunit-dist.xml phpunit-dist-58.xml
 mkdir -p ./build/logs
