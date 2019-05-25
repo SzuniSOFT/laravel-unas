@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/SzuniSOFT/laravel-unas.svg?branch=master)](https://travis-ci.org/SzuniSOFT/laravel-unas)
+[![Latest Stable Version](https://poser.pugx.org/szunisoft/laravel-unas/version)](https://packagist.org/packages/szunisoft/laravel-unas)
+[![Total Downloads](https://poser.pugx.org/szunisoft/laravel-unas/downloads)](https://packagist.org/packages/szunisoft/laravel-unas)
+[![License](https://poser.pugx.org/szunisoft/laravel-unas/license)](https://packagist.org/packages/szunisoft/laravel-unas)
 
 # Laravel Unas
 
