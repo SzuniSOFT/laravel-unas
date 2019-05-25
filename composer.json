@@ -45,7 +45,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "SzuniSoft\\Unas\\Laravel\\Support\\ServiceProvider"
+        "SzuniSoft\\Unas\\Laravel\\Support\\UnasServiceProvider"
       ]
     }
   }
