@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Products>
+    <Product>
+        <State>live</State>
+        <Id>200000</Id>
+        <Sku>Cikkszam2</Sku>
+        <History>
+            <Event>
+                <Action>add</Action>
+                <Time>1348483563</Time>
+                <Sku>Cikkszam2_old</Sku>
+            </Event>
+            <Event>
+                <Action>modify</Action>
+                <Time>1348483571</Time>
+                <Sku>Cikkszam2</Sku>
+                <SkuOld>Cikkszam2_old</SkuOld>
+            </Event>
+        </History>
+        <Statuses>
+            <Status>
+                <Type>base</Type>
+                <Value>1</Value>
+            </Status>
+            <Status>
+                <Type>plus</Type>
+                <Id>1</Id>
+                <Name><![CDATA[Előrendelhető]]></Name>
+                <Value>1</Value>
+            </Status>
+            <Status>
+                <Type>plus</Type>
+                <Id>2</Id>
+                <Name><![CDATA[Ajánljuk]]></Name>
+                <Value>0</Value>
+            </Status>
+        </Statuses>
+        <Explicit>0</Explicit>
+        <Export>
+            <Status>1</Status>
+            <Forbidden>
+                <Format>preisvergleich.de</Format>
+                <Format>argep.hu</Format>
+            </Forbidden>
+        </Export>
+        <PublicInterval>
+            <Start>2019.01.01 0:00</Start>
+            <End>2020.12.31 23:59</End>
+        </PublicInterval>
+        <Name><![CDATA[Termék név 2]]></Name>
+        <Unit><![CDATA[csomag]]></Unit>
+        <MinimumQty>1</MinimumQty>
+        <MaximumQty>5</MaximumQty>
+        <AlertQty>5</AlertQty>
+        <UnitStep><![CDATA[2]]></UnitStep>
+        <AlterUnit>
+            <Qty>10</Qty>
+            <Unit><![CDATA[db]]></Unit>
+        </AlterUnit>
+        <Weight>1</Weight>
+        <Point>10</Point>
+        <Description>
+            <Short><![CDATA[rövid leírás]]></Short>
+            <Long><![CDATA[ez már hosszabb]]></Long>
+        </Description>
+        <Prices>
+            <Vat>27%</Vat>
+            <Price>
+                <Type>normal</Type>
+                <Net>2000</Net>
+                <Gross>2540</Gross>
+            </Price>
+            <Price>
+                <Type>sale</Type>
+                <Start>2015.01.01</Start>
+                <End></End>
+                <Net>1000</Net>
+                <Gross>1270</Gross>
+            </Price>
+            <Price>
+                <Type>special</Type>
+                <Group>100</Group>
+                <Net>393.7008</Net>
+                <Gross>500</Gross>
+            </Price>
+            <Price>
+                <Type>special</Type>
+                <Area>200</Area>
+                <AreaName><![CDATA[Belföld]]></AreaName>
+                <Group>100</Group>
+                <GroupName><![CDATA[Törzsvásárló]]></GroupName>
+                <Net>629.9212</Net>
+                <Gross>800</Gross>
+            </Price>
+            <Price>
+                <Type>special</Type>
+                <Area>200</Area>
+                <Group>200</Group>
+                <Net>1000</Net>
+                <Gross>1270</Gross>
+                <SaleNet>629.9212</SaleNet>
+                <SaleGross>800</SaleGross>
+                <SaleStart>2017.01.01</SaleStart>
+                <SaleEnd>2017.12.31</SaleEnd>
+            </Price>
+            <Price>
+                <Type>special</Type>
+                <Area>300</Area>
+                <Group>300</Group>
+                <Percent>20%</Percent>
+            </Price>
+        </Prices>
+        <Categories>
+            <Category>
+                <Type>base</Type>
+                <Id>369560</Id>
+                <Name><![CDATA[Főcsoport1|Alcsoport1]]></Name>
+            </Category>
+            <Category>
+                <Type>alt</Type>
+                <Id>292475</Id>
+                <Name><![CDATA[Főcsoport1|Alcsoport2]]></Name>
+            </Category>
+            <Category>
+                <Type>alt</Type>
+                <Id>706395</Id>
+                <Name><![CDATA[Főcsoport2|Alcsoport1]]></Name>
+            </Category>
+        </Categories>
+        <Url><![CDATA[http://teszt.unas.hu/Cikkszam1]]></Url>
+        <Images>
+            <Image>
+                <Type>base</Type>
+                <Url>
+                    <Small>http://teszt.unas.hu/…/Cikkszam1.jpg</Small>
+                    <Medium>http://teszt.unas.hu/…/Cikkszam1.jpg</Medium>
+                    <Big>http://teszt.unas.hu/…/Cikkszam1.jpg</Big>
+                </Url>
+                <Import>
+                    <Url></Url>
+                    <Encoded></Encoded>
+                </Import>
+            </Image>
+            <Image>
+                <Type>alt</Type>
+                <Id>1</Id>
+                <Url>
+                    <Small>http://teszt.unas.hu/…/Cikkszam1_altpic_1.jpg</Small>
+                    <Medium>http://teszt.unas.hu/…/Cikkszam1_altpic_1.jpg</Medium>
+                </Url>
+                <Import>
+                    <Url></Url>
+                    <Encoded></Encoded>
+                </Import>
+            </Image>
+        </Images>
+        <Variants>
+            <Variant>
+                <Name><![CDATA[Szín]]></Name>
+                <Values>
+                    <Value>
+                        <Name><![CDATA[Kék]]></Name>
+                    </Value>
+                    <Value>
+                        <Name><![CDATA[Piros]]></Name>
+                        <ExtraPrice>100</ExtraPrice>
+                    </Value>
+                </Values>
+            </Variant>
+            <Variant>
+                <Name><![CDATA[Méret]]></Name>
+                <Values>
+                    <Value>
+                        <Name><![CDATA[S]]></Name>
+                        <ExtraPrice>-100</ExtraPrice>
+                    </Value>
+                    <Value>
+                        <Name><![CDATA[M]]></Name>
+                    </Value>
+                    <Value>
+                        <Name><![CDATA[L]]></Name>
+                        <ExtraPrice>200</ExtraPrice>
+                    </Value>
+                </Values>
+            </Variant>
+        </Variants>
+        <Datas>
+            <Data>
+                <Id>1</Id>
+                <Name><![CDATA[Garancia]]></Name>
+                <Value><![CDATA[Egy év]]></Value>
+            </Data>
+            <Data>
+                <Id>2</Id>
+                <Name><![CDATA[Szállítási Határidő]]></Name>
+                <Value><![CDATA[Egy hét]]></Value>
+            </Data>
+        </Datas>
+        <Params>
+            <Param>
+                <Id>1001</Id>
+                <Type>text</Type>
+                <Name><![CDATA[Paraméter 1]]></Name>
+                <Group><![CDATA[Csoport 1]]></Group>
+                <Value><![CDATA[Környakú]]></Value>
+            </Param>
+            <Param>
+                <Id>1002</Id>
+                <Type>textmore</Type>
+                <Name><![CDATA[Paraméter 2]]></Name>
+                <Value><![CDATA[Érték 1, Érték 2, Érték 3]]></Value>
+            </Param>
+            <Param>
+                <Id>1003</Id>
+                <Type>enum</Type>
+                <Name><![CDATA[Paraméter 3]]></Name>
+                <Value><![CDATA[Érték 1, Érték 2, Érték 3]]></Value>
+            </Param>
+            <Param>
+                <Id>1004</Id>
+                <Type>enummore</Type>
+                <Name><![CDATA[Paraméter 4]]></Name>
+                <Value><![CDATA[Érték 1, Érték 2, Érték 3]]></Value>
+            </Param>
+            <Param>
+                <Id>1005</Id>
+                <Type>num</Type>
+                <Name><![CDATA[Paraméter 5]]></Name>
+                <Value><![CDATA[100]]></Value>
+                <Before><![CDATA[akármi]]></Before>
+                <After><![CDATA[db]]></After>
+            </Param>
+            <Param>
+                <Id>1006</Id>
+                <Type>interval</Type>
+                <Name><![CDATA[Paraméter 6]]></Name>
+                <Value><![CDATA[100 - 200]]></Value>
+                <Before><![CDATA[akármi]]></Before>
+                <After><![CDATA[db]]></After>
+            </Param>
+            <Param>
+                <Id>1007</Id>
+                <Type>color</Type>
+                <Name><![CDATA[Paraméter 7]]></Name>
+                <Value><![CDATA[#ff00ff]]></Value>
+            </Param>
+            <Param>
+                <Id>1008</Id>
+                <Type>link</Type>
+                <Name><![CDATA[Paraméter 8]]></Name>
+                <Value><![CDATA[http://unas.hu]]></Value>
+            </Param>
+            <Param>
+                <Id>1009</Id>
+                <Type>linkblank</Type>
+                <Name><![CDATA[Paraméter 9]]></Name>
+                <Value><![CDATA[http://shop.unas.hu]]></Value>
+            </Param>
+            <Param>
+                <Id>1010</Id>
+                <Type>link_text</Type>
+                <Name><![CDATA[Paraméter 10]]></Name>
+                <Value><![CDATA[http://shop.unas.hu - UnasShop]]></Value>
+            </Param>
+            <Param>
+                <Id>1011</Id>
+                <Type>html</Type>
+                <Name><![CDATA[Paraméter 11]]></Name>
+                <Value><![CDATA[Teszt <b>szöveg</b>]]></Value>
+            </Param>
+            <Param>
+                <Id>1012</Id>
+                <Type>icon</Type>
+                <Name><![CDATA[Paraméter 12]]></Name>
+                <Value><![CDATA[1]]></Value>
+            </Param>
+            <Param>
+                <Id>1013</Id>
+                <Type>iconmore</Type>
+                <Name><![CDATA[Paraméter 13]]></Name>
+                <Value><![CDATA[1, 3, 10]]></Value>
+            </Param>
+            <Param>
+                <Id>1014</Id>
+                <Type>pic</Type>
+                <Name><![CDATA[Paraméter 14]]></Name>
+                <Value><![CDATA[pic_194908_api_teszt.jpg]]></Value>
+            </Param>
+            <Param>
+                <Id>1015</Id>
+                <Type>piclink</Type>
+                <Name><![CDATA[Paraméter 15]]></Name>
+                <Value><![CDATA[akarmi.jpg]]></Value>
+            </Param>
+            <Param>
+                <Id>1016</Id>
+                <Type>piclinktext</Type>
+                <Name><![CDATA[Paraméter 16]]></Name>
+                <Value><![CDATA[akarmi.jpg - AKÁRMI]]></Value>
+            </Param>
+            <Param>
+                <Id>1017</Id>
+                <Type>date</Type>
+                <Name><![CDATA[Paraméter 17]]></Name>
+                <Value><![CDATA[2019.01.01]]></Value>
+            </Param>
+        </Params>
+        <QtyDiscount>
+            <Step>
+                <Limit>
+                    <Lower>0</Lower>
+                    <Upper>10</Upper>
+                </Limit>
+                <Discount>0%</Discount>
+            </Step>
+            <Step>
+                <Limit>
+                    <Lower>10</Lower>
+                    <Upper>20</Upper>
+                </Limit>
+                <Discount>5%</Discount>
+            </Step>
+            <Step>
+                <Limit>
+                    <Lower>20</Lower>
+                </Limit>
+                <Discount>10%</Discount>
+            </Step>
+        </QtyDiscount>
+        <AdditionalProducts>
+            <AdditionalProduct>
+                <Id>70828162</Id>
+                <Sku>Cikkszam1</Sku>
+                <Name><![CDATA[Termék név 1]]></Name>
+            </AdditionalProduct>
+            <AdditionalProduct>
+                <Id>63226347</Id>
+                <Sku>Cikkszam3</Sku>
+                <Name><![CDATA[Termék név 3]]></Name>
+            </AdditionalProduct>
+        </AdditionalProducts>
+        <SimilarProducts>
+            <SimilarProduct>
+                <Id>85478568</Id>
+                <Sku>Cikkszam5</Sku>
+                <Name><![CDATA[Termék név 5]]></Name>
+            </SimilarProduct>
+        </SimilarProducts>
+        <Stocks>
+            <Status>
+                <Active>1</Active>
+                <Empty>1</Empty>
+                <Variant>1</Variant>
+            </Status>
+            <Stock>
+                <Variants>
+                    <Variant>Kék</Variant>
+                    <Variant>S</Variant>
+                </Variants>
+                <Qty>10</Qty>
+            </Stock>
+            <Stock>
+                <Variants>
+                    <Variant>Piros</Variant>
+                    <Variant>M</Variant>
+                </Variants>
+                <Qty>20</Qty>
+            </Stock>
+        </Stocks>
+        <PlazaCategory>
+            <Id>100</Id>
+            <Name><![CDATA[Számítástechnika|…|Billentyűzet]]></Name>
+        </PlazaCategory>
+        <OnlineContent>
+            <Url><![CDATA[http://teszt.hu/akarmi.pdf]]></Url>
+            <Limit>no</Limit>
+            <Filename>akarmi_mas.pdf</Filename>
+        </OnlineContent>
+        <Types>
+            <Type>child</Type>
+            <Parent>Cikkszam1</Parent>
+            <Display>0</Display>
+            <Order>1</Order>
+        </Types>
+        <Meta>
+            <Keywords><![CDATA[szuper jó, olcsó]]></Keywords>
+            <Description><![CDATA[erre alkalmas]]></Description>
+            <Title><![CDATA[címben ez is szerepel]]></Title>
+        </Meta>
+    </Product>
+    <Product>
+        <State>deleted</State>
+        <Id>500000</Id>
+        <Sku>Cikkszam5</Sku>
+        <History>
+            <Event>
+                <Action>add</Action>
+                <Time>1348483563</Time>
+                <Sku>Cikkszam5</Sku>
+            </Event>
+            <Event>
+                <Action>delete</Action>
+                <Time>1348483571</Time>
+                <Sku>Cikkszam5</Sku>
+            </Event>
+        </History>
+    </Product>
+</Products>

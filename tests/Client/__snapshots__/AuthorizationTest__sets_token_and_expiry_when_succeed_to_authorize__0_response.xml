@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Login>
+  <Token>xyz789</Token>
+  <Expire>01.01.2019 10:00:00</Expire>
+  <Status>ok</Status>
+</Login>

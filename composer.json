@@ -1,0 +1,52 @@
+{
+  "name": "szunisoft/laravel-unas",
+  "description": "Laravel package for UNAS Webshop API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bence Forgács",
+      "email": "bence.forgacs@szunisoft.hu"
+    }
+  ],
+  "keywords": [
+    "laravel",
+    "unas",
+    "webshop",
+    "api",
+    "products",
+    "orders"
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.2",
+    "laravel/framework": "~5.5",
+    "guzzlehttp/guzzle": "^6.3.3",
+    "ext-xmlwriter": "*",
+    "ext-simplexml": "*",
+    "orchestra/parser": "^3.8"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~8.0",
+    "mockery/mockery": "1.1.*",
+    "spatie/phpunit-snapshot-assertions": "^2.1.2",
+    "orchestra/testbench": "^3.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "SzuniSoft\\Unas\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SzuniSoft\\Unas\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SzuniSoft\\Unas\\Laravel\\Support\\ServiceProvider"
+      ]
+    }
+  }
+}
