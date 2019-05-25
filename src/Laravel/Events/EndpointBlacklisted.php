@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Laravel\Events;
 use Carbon\Carbon;
 use SzuniSoft\Unas\Internal\Client;
 
+/**
+ * Class EndpointBlacklisted
+ * @package SzuniSoft\Unas\Laravel\Events
+ * @codeCoverageIgnore
+ */
 class EndpointBlacklisted
 {
 

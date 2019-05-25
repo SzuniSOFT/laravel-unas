@@ -4,6 +4,7 @@
 namespace SzuniSoft\Unas\Internal;
 
 
+use function dd;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
@@ -75,32 +76,6 @@ class Client
     private $authCode;
 
     /**
-     * @param $eventClass
-     *
-     * @return bool
-     */
-    public function wantsEvent($eventClass)
-    {
-        return in_array($eventClass, $this->config['errors'] ?? []);
-    }
-
-    /**
-     * @return string
-     */
-    public function getToken(): string
-    {
-        return $this->token;
-    }
-
-    /**
-     * @return \Illuminate\Support\Carbon
-     */
-    public function getTokenExpiresAt(): Carbon
-    {
-        return $this->tokenExpiresAt;
-    }
-
-    /**
      * Client constructor.
      *
      * @param array $config
@@ -124,6 +99,32 @@ class Client
             $this->authCode = $config['auth_code'];
         }
 
+    }
+
+    /**
+     * @param $eventClass
+     *
+     * @return bool
+     */
+    public function wantsEvent($eventClass)
+    {
+        return in_array($eventClass, $this->config['events'] ?? []);
+    }
+
+    /**
+     * @return string
+     */
+    public function getToken(): string
+    {
+        return $this->token;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon
+     */
+    public function getTokenExpiresAt(): Carbon
+    {
+        return $this->tokenExpiresAt;
     }
 
     /**

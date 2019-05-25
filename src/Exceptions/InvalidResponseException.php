@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Exceptions;
 use RuntimeException;
 use Throwable;
 
+/**
+ * Class InvalidResponseException
+ * @package SzuniSoft\Unas\Exceptions
+ * @codeCoverageIgnore
+ */
 class InvalidResponseException extends RuntimeException
 {
 

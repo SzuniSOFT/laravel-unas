@@ -9,6 +9,11 @@ use RuntimeException;
 use SzuniSoft\Unas\Internal\Client;
 use SzuniSoft\Unas\Laravel\Events\InvalidConfiguration;
 
+/**
+ * Class InvalidConfigurationException
+ * @package SzuniSoft\Unas\Exceptions
+ * @codeCoverageIgnore
+ */
 class InvalidConfigurationException extends RuntimeException implements EventException
 {
 

@@ -3,7 +3,7 @@
 [![Total Downloads](https://poser.pugx.org/szunisoft/laravel-unas/downloads)](https://packagist.org/packages/szunisoft/laravel-unas)
 [![License](https://poser.pugx.org/szunisoft/laravel-unas/license)](https://packagist.org/packages/szunisoft/laravel-unas)
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/szunisoft/laravel-unas.svg?label=php%20version&style=flat-square)
-
+[![Coverage Status](https://coveralls.io/repos/github/SzuniSOFT/laravel-unas/badge.svg?branch=master)](https://coveralls.io/github/SzuniSOFT/laravel-unas?branch=master)
 # Laravel Unas
 
 _About the package_

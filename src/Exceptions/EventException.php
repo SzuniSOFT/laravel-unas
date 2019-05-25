@@ -6,6 +6,11 @@ namespace SzuniSoft\Unas\Exceptions;
 
 use SzuniSoft\Unas\Internal\Client;
 
+/**
+ * Interface EventException
+ * @package SzuniSoft\Unas\Exceptions
+ * @codeCoverageIgnore
+ */
 interface EventException
 {
 

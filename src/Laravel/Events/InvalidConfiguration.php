@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Laravel\Events;
 use Illuminate\Contracts\Validation\Validator;
 use SzuniSoft\Unas\Internal\Client;
 
+/**
+ * Class InvalidConfiguration
+ * @package SzuniSoft\Unas\Laravel\Events
+ * @codeCoverageIgnore
+ */
 class InvalidConfiguration
 {
 

@@ -6,6 +6,11 @@ namespace SzuniSoft\Unas\Exceptions;
 
 use RuntimeException;
 
+/**
+ * Class InvalidBuilderMethodException
+ * @package SzuniSoft\Unas\Exceptions
+ * @codeCoverageIgnore
+ */
 class InvalidBuilderMethodException extends RuntimeException
 {
 

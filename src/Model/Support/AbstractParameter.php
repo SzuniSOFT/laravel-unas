@@ -11,6 +11,8 @@ namespace SzuniSoft\Unas\Model\Support;
  * @property string $id
  * @property string $name
  * @property string $value
+ *
+ * @codeCoverageIgnore
  */
 abstract class AbstractParameter extends AbstractModel
 {

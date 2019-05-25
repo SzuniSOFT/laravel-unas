@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Laravel\Events;
 use SzuniSoft\Unas\Exceptions\AuthenticationException;
 use SzuniSoft\Unas\Internal\Client;
 
+/**
+ * Class Unauthenticated
+ * @package SzuniSoft\Unas\Laravel\Events
+ * @codeCoverageIgnore
+ */
 class Unauthenticated
 {
 

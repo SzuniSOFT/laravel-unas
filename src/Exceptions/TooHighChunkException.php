@@ -6,6 +6,11 @@ namespace SzuniSoft\Unas\Exceptions;
 
 use RuntimeException;
 
+/**
+ * Class TooHighChunkException
+ * @package SzuniSoft\Unas\Exceptions
+ * @codeCoverageIgnore
+ */
 class TooHighChunkException extends RuntimeException
 {
 

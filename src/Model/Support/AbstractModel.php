@@ -105,12 +105,17 @@ abstract class AbstractModel
 
     /**
      * @return array
+     * @codeCoverageIgnore
      */
     public static function commonValidationRules()
     {
         return [];
     }
 
+    /**
+     * @return array
+     * @codeCoverageIgnore
+     */
     public function getDates()
     {
         return [];
@@ -118,7 +123,7 @@ abstract class AbstractModel
 
     /**
      * Get the value indicating whether the IDs are incrementing.
-     *
+     * @codeCoverageIgnore
      * @return bool
      */
     public function getIncrementing()
@@ -126,7 +131,11 @@ abstract class AbstractModel
         return false;
     }
 
-
+    /**
+     * @param $key
+     * @codeCoverageIgnore
+     * @return null
+     */
     public function getRelationValue($key)
     {
         return null;

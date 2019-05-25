@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Model\Support;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * Class AbstractAncestorModel
+ * @package SzuniSoft\Unas\Model\Support
+ * @codeCoverageIgnore
+ */
 abstract class AbstractAncestorModel extends AbstractModel
 {
 
