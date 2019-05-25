@@ -6,6 +6,11 @@ namespace SzuniSoft\Unas\Internal\Builders;
 
 use Illuminate\Support\Collection;
 
+/**
+ * Class AbstractBuilder
+ * @package SzuniSoft\Unas\Internal\Builders
+ * @codeCoverageIgnore
+ */
 abstract class AbstractBuilder
 {
 

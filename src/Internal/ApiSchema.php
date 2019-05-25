@@ -7,6 +7,11 @@ namespace SzuniSoft\Unas\Internal;
 use Illuminate\Support\Str;
 use function mb_strtolower;
 
+/**
+ * Class ApiSchema
+ * @package SzuniSoft\Unas\Internal
+ * @codeCoverageIgnore
+ */
 class ApiSchema
 {
 

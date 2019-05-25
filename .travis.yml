@@ -6,23 +6,25 @@ php:
   - 7.2
 
 env:
-  - LARAVEL=5.8.* ORCHESTRA=3.8.* PHPUNIT=*
-  - LARAVEL=5.7.* ORCHESTRA=3.7.* PHPUNIT=*
-  - LARAVEL=5.6.* ORCHESTRA=3.6.* PHPUNIT=*
-  - LARAVEL=5.5.* ORCHESTRA=3.5.* PHPUNIT=*
+  - VERSION=58
+  - VERSION=57
+  - VERSION=56
+  - VERSION=55
 
 matrix:
   fast_finish: true
 
-before_install:
-  - composer require "laravel/framework:${LARAVEL}" "orchestra/testbench:${ORCHESTRA}" "phpunit/phpunit:${PHPUNIT}" --update-with-all-dependencies
 
 before_script:
+  - travis_retry composer self-update
   - travis_retry composer install --prefer-source --no-interaction
-  - composer update
+  - chmod +x tests/*.sh
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls
 
 scripts:
-  - phpunit -c phpunit.xml
+  - ./tests/scripts/${VERSION}.sh
 
 notifications:
   email: false

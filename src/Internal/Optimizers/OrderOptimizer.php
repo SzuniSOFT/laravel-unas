@@ -21,6 +21,7 @@ use function array_values;
  * Trait OrderOptimizer
  * @package SzuniSoft\Unas\Internal\Optimizers
  * @mixin Order
+ * @codeCoverageIgnore
  */
 trait OrderOptimizer
 {

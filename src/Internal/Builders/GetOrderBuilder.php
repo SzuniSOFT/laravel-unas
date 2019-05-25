@@ -25,6 +25,8 @@ use SzuniSoft\Unas\Internal\ApiSchema;
  * @method $this limitStart(int $from)
  * @method $this limitNum(int $limit)
  * @method $this key($id)
+ *
+ * @codeCoverageIgnore
  */
 class GetOrderBuilder extends AbstractBuilder
 {
