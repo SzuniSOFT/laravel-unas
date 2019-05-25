@@ -18,14 +18,12 @@ matrix:
 before_script:
   - travis_retry composer self-update
   - travis_retry composer install --prefer-source --no-interaction
-  - pwd
   - chmod +x tests/scripts/*.sh
 
 after_success:
-  - pwd
   - travis_retry php vendor/bin/php-coveralls
 
-scripts:
+script:
   - ./tests/scripts/${VERSION}.sh
 
 notifications:
