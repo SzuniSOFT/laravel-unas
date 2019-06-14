@@ -132,7 +132,7 @@ class Client
      */
     protected function makeClient()
     {
-        return new \GuzzleHttp\Client();
+        return new \GuzzleHttp\Client(['base_url' => $this->base]);
     }
 
     /**
@@ -313,7 +313,8 @@ class Client
 
             $this->token = $payload['Token'];
             $this->tokenExpiresAt = Carbon::createFromFormat(ApiSchema::AUTH_DATE_TIME_FORMAT, $payload['Expire']);
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
 
             if ($e instanceof AuthenticationException) {
                 throw $e;
