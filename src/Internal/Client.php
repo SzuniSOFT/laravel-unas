@@ -4,7 +4,6 @@
 namespace SzuniSoft\Unas\Internal;
 
 
-use function dd;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
@@ -132,7 +131,7 @@ class Client
      */
     protected function makeClient()
     {
-        return new \GuzzleHttp\Client(['base_url' => $this->base]);
+        return new \GuzzleHttp\Client(['base_uri' => $this->base]);
     }
 
     /**

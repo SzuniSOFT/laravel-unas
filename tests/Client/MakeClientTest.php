@@ -38,7 +38,7 @@ class MakeClientTest extends TestCase
         /** @var \GuzzleHttp\Client $httpClient */
         $httpClient = $m->invoke($this->client);
 
-        $this->assertEquals('http://example.com', $httpClient->getConfig()['base_url']);
+        $this->assertEquals('http://example.com', $httpClient->getConfig()['base_uri']);
     }
 
 }
