@@ -93,10 +93,10 @@ class PayloadBuilder
         return self::builder(function (XMLWriter $writer) use (&$username, &$password, &$shopId, &$authCode) {
             $writer->startElement('Auth');
             {
-                $writer->writeAttribute('Username', $username);
-                $writer->writeAttribute('PasswordCrypt', $password);
-                $writer->writeAttribute('ShopId', $shopId);
-                $writer->writeAttribute('AuthCode', $authCode);
+                $writer->writeElement('Username', $username);
+                $writer->writeElement('PasswordCrypt', $password);
+                $writer->writeElement('ShopId', $shopId);
+                $writer->writeElement('AuthCode', $authCode);
             }
             $writer->endElement();
         });
