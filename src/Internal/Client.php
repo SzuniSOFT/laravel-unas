@@ -23,8 +23,10 @@ use SzuniSoft\Unas\Model\Product;
 use function array_merge;
 use function event;
 use function in_array;
+use function is_array;
 use function is_string;
 use function preg_match;
+use function throw_if;
 
 class Client
 {
@@ -193,9 +195,14 @@ class Client
     protected function sendRequest($uri, $body = [], $headers = [])
     {
         // Setup request payload.
-        $options = [
-            'form_params' => $body,
-        ];
+        $options = [];
+
+        if (is_array($body)) {
+            $options['form_params'] = $body;
+        }
+        else {
+            $options['body'] = $body;
+        }
 
         // Apply token.
         if ($this->token) {
@@ -297,23 +304,37 @@ class Client
      * @param bool $silent
      *
      * @return bool
+     * @throws \SzuniSoft\Unas\Exceptions\EventException
+     * @throws \Throwable
      */
     protected function premiumAuthorization(bool $silent = false)
     {
         // Perform login request.
-        $rawResponse = $this
-            ->sendRequest('login', PayloadBuilder::forPremiumAuthorization($this->key))
-            ->getBody();
+        try {
+            $rawResponse = (string) $this
+                ->sendRequest('login', PayloadBuilder::forPremiumAuthorization($this->key))
+                ->getBody();
+        }
+        catch (ClientException $exception) {
+
+            if ($exception->getCode() >= 500 || !$exception->hasResponse()) {
+                throw $exception;
+            }
+
+            $rawResponse = (string) $exception->getResponse()->getBody() ?? null;
+            throw_if(!$rawResponse, $exception);
+
+        }
 
         // Intercept response.
         $payload = $this->parse($rawResponse);
 
-        // Key cannot be used because tenant has no premium package.
-        if (is_string($payload) && $payload == ApiSchema::PREMIUM_PACKAGE_ERROR_MESSAGE) {
-            throw new PremiumAuthenticationException($this);
-        }
-
         try {
+
+            // Key cannot be used because tenant has no premium package.
+            if (is_string($payload) && $payload == ApiSchema::PREMIUM_PACKAGE_ERROR_MESSAGE) {
+                throw new PremiumAuthenticationException($this);
+            }
 
             if ($payload['Status'] !== 'ok') {
                 if (!$silent) {
@@ -328,6 +349,10 @@ class Client
         catch (Exception $e) {
 
             if ($e instanceof AuthenticationException) {
+
+                if ($silent) {
+                    return false;
+                }
                 throw $e;
             }
 
