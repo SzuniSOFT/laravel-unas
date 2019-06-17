@@ -286,7 +286,7 @@ class Client
 
         if (!$this->isPremium &&
             is_string($payload) &&
-            preg_match('/^Authentication Error: ([a-zA-Z]+)$/', $payload, $matches)
+            preg_match('/^Authentication Error: ([a-zA-Z\s]+)$/', $payload, $matches)
         ) {
 
             $this->error(
