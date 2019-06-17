@@ -5,6 +5,7 @@ namespace SzuniSoft\Unas\Internal;
 
 
 use Exception;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -20,7 +21,6 @@ use SzuniSoft\Unas\Internal\Builders\GetProductBuilder;
 use SzuniSoft\Unas\Internal\Builders\PayloadBuilder;
 use SzuniSoft\Unas\Model\Product;
 use function array_merge;
-use function compact;
 use function event;
 use function in_array;
 use function is_string;
@@ -193,7 +193,9 @@ class Client
     protected function sendRequest($uri, $body = [], $headers = [])
     {
         // Setup request payload.
-        $options = compact('body');
+        $options = [
+            'form_params' => $body,
+        ];
 
         // Apply token.
         if ($this->token) {
@@ -234,7 +236,17 @@ class Client
         }
 
         // Send request and receive response.
-        $response = $this->sendRequest($uri, $body, $headers);
+        try {
+            $response = $this->sendRequest($uri, $body, $headers);
+        }
+        catch (ClientException $exception) {
+
+            if ($exception->getCode() >= 500) {
+                throw $exception;
+            }
+
+            $response = $exception->getResponse();
+        }
 
         // Parse response.
         $parsedContent = $this->parse($response->getBody());

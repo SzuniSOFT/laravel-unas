@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Auth Username="username" PasswordCrypt="password" ShopId="1" AuthCode="1"/>
+<Auth><Username>username</Username><PasswordCrypt>password</PasswordCrypt><ShopId>1</ShopId><AuthCode>1</AuthCode></Auth>
