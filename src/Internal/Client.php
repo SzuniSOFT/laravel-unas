@@ -5,7 +5,7 @@ namespace SzuniSoft\Unas\Internal;
 
 
 use Exception;
-use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -246,7 +246,7 @@ class Client
         try {
             $response = $this->sendRequest($uri, $body, $headers);
         }
-        catch (ClientException $exception) {
+        catch (RequestException $exception) {
 
             if ($exception->getCode() >= 500) {
                 throw $exception;
@@ -311,17 +311,17 @@ class Client
     {
         // Perform login request.
         try {
-            $rawResponse = (string) $this
+            $rawResponse = (string)$this
                 ->sendRequest('login', PayloadBuilder::forPremiumAuthorization($this->key))
                 ->getBody();
         }
-        catch (ClientException $exception) {
+        catch (RequestException $exception) {
 
             if ($exception->getCode() >= 500 || !$exception->hasResponse()) {
                 throw $exception;
             }
 
-            $rawResponse = (string) $exception->getResponse()->getBody() ?? null;
+            $rawResponse = (string)$exception->getResponse()->getBody() ?? null;
             throw_if(!$rawResponse, $exception);
 
         }
