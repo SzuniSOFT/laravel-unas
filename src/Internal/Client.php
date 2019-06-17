@@ -369,7 +369,7 @@ class Client
             $this->request(
                 'getProduct',
                 $payload,
-                PayloadBuilder::forGetProduct($params)
+                ['params' => PayloadBuilder::forGetProduct($params)]
             );
 
             // Convert response to OOP style.
