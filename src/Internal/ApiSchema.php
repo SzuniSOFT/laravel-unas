@@ -21,6 +21,7 @@ class ApiSchema
     const MAX_PAGING_CHUNK_SIZE = 500;
 
     const PREMIUM_PACKAGE_ERROR_MESSAGE = 'Login Error: PREMIUM package needed';
+    const PREMIUM_INVALID_API_KEY_MESSAGE = 'Login Error: invalid ApiKey';
 
     /**
      * Optimize key name for UNAS.

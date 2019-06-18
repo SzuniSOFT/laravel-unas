@@ -336,7 +336,7 @@ class Client
                 throw new PremiumAuthenticationException($this);
             }
 
-            if ($payload['Status'] !== 'ok') {
+            if ($payload == ApiSchema::PREMIUM_INVALID_API_KEY_MESSAGE || $payload['Status'] !== 'ok') {
                 if (!$silent) {
                     throw new AuthenticationException($this);
                 }
