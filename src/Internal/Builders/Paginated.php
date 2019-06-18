@@ -66,14 +66,16 @@ trait Paginated
      * @param int $page
      * @param int $perPage
      *
-     * @return mixed
+     * @return \Illuminate\Support\Collection
      */
     public function page(int $page, int $perPage = null)
     {
         if ($perPage) {
             $this->paginate($perPage);
         }
-        return $this->limitStart(($page - 1) * $this->perRequest)->retrieve();
+        return $this->limitStart(
+            (($page - 1) * $this->perRequest) + 1
+        )->retrieve();
     }
 
     /**

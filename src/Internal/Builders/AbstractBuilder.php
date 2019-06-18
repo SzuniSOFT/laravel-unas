@@ -5,6 +5,7 @@ namespace SzuniSoft\Unas\Internal\Builders;
 
 
 use Illuminate\Support\Collection;
+use function is_array;
 
 /**
  * Class AbstractBuilder
@@ -45,7 +46,7 @@ abstract class AbstractBuilder
      */
     public function __call($name, $arguments)
     {
-        $this->params[$name] = $arguments[0];
+        $this->params[$name] = is_array($arguments) ? $arguments[0] : $arguments;
     }
 
     /**
