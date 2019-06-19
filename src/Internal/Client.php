@@ -410,7 +410,7 @@ class Client
             );
 
             // Convert response to OOP style.
-            return Collection::wrap(Arr::wrap($payload['Product']))->map(function ($rawProduct) {
+            return Collection::wrap(Arr::wrapNumeric($payload['Product']))->map(function ($rawProduct) {
                 return new Product($rawProduct);
             });
         });

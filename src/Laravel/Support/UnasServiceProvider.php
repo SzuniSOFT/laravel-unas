@@ -5,11 +5,26 @@ namespace SzuniSoft\Unas\Laravel\Support;
 
 
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use SzuniSoft\Unas\Internal\Client;
 
 class UnasServiceProvider extends ServiceProvider
 {
+
+    public function boot()
+    {
+        Arr::macro('wrapNumeric', function ($arr) {
+
+            $arr = Arr::wrap($arr);
+
+            if (Arr::isAssoc($arr)) {
+                return [$arr];
+            }
+
+            return $arr;
+        });
+    }
 
     public function register()
     {

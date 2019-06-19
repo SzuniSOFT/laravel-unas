@@ -6,12 +6,18 @@ namespace SzuniSoft\Unas\Tests\Client;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Collection;
+use SzuniSoft\Unas\Laravel\Support\UnasServiceProvider;
 use SzuniSoft\Unas\Model\Product;
 
 class GetProductTest extends AuthenticatedTestCase
 {
 
     use WithFaker;
+
+    protected function getPackageProviders($app)
+    {
+        return [UnasServiceProvider::class];
+    }
 
     /** @test */
     public function can_return_with_products()
