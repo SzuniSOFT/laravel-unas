@@ -256,19 +256,24 @@ class Client
         }
 
         // Parse response.
-        $parsedContent = $this->parse($response->getBody());
+        $body = $response->getBody() ?? null;
 
-        // Check if it is blacklist error.
-        if (is_string($parsedContent) &&
-            preg_match('/^Too much ([a-zA-Z\s]+) query, IP is banned till ([0-9\s\.\:]+)!$/', $parsedContent, $matches)) {
+        if ($body) {
 
-            $this->error(
-                new EndpointBlacklistedException(
-                    $matches[1],
-                    Carbon::createFromFormat('m.d.Y H:i:s', $matches[2]),
-                    $this
-                )
-            );
+            $parsedContent = $this->parse($body);
+
+            // Check if it is blacklist error.
+            if (is_string($parsedContent) &&
+                preg_match('/^Too much ([a-zA-Z\s]+) query, IP is banned till ([0-9\s\.\:]+)!$/', $parsedContent, $matches)) {
+
+                $this->error(
+                    new EndpointBlacklistedException(
+                        $matches[1],
+                        Carbon::createFromFormat('m.d.Y H:i:s', $matches[2]),
+                        $this
+                    )
+                );
+            }
         }
 
         return $response;
@@ -410,7 +415,7 @@ class Client
             );
 
             // Convert response to OOP style.
-            return Collection::wrap(Arr::wrapNumeric($payload['Product']))->map(function ($rawProduct) {
+            return Collection::wrap(Arr::wrapNumeric($payload['Product'] ?? []))->map(function ($rawProduct) {
                 return new Product($rawProduct);
             });
         });
