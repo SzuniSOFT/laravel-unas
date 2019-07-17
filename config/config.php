@@ -26,6 +26,17 @@ return [
     // Changing this is not recommended.
     'base_path' => env('UNAS_BASE_PATH', 'https://api.unas.eu/shop/'),
 
+    // GuzzleHttp timeouts
+    'timeouts' => [
+
+        // @see http://docs.guzzlephp.org/en/stable/request-options.html#connect-timeout
+        'connect_timeout' => 30,
+        // @see http://docs.guzzlephp.org/en/stable/request-options.html#timeout
+        'timeout' => 120,
+        // @see http://docs.guzzlephp.org/en/stable/request-options.html#read-timeout
+        'read_timeout' => 120,
+    ],
+
     'events' => [
 
         // Add or remove events here.

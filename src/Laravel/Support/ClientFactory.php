@@ -5,6 +5,7 @@ namespace SzuniSoft\Unas\Laravel\Support;
 
 
 use SzuniSoft\Unas\Internal\Client;
+use function array_merge;
 
 /**
  * Class ClientFactory
@@ -24,6 +25,11 @@ class ClientFactory
     protected $manager;
 
     /**
+     * @var array
+     */
+    protected $defaultConfig;
+
+    /**
      * ClientFactory constructor.
      *
      * @param array                                         $config
@@ -33,16 +39,27 @@ class ClientFactory
     {
         $this->rememberAllowed = $config['remember_clients'] ?? true;
         $this->manager = $manager;
+        $this->defaultConfig = $config;
     }
 
     /**
      * @param array $config
      *
+     * @param bool  $inherit
+     *
      * @return \SzuniSoft\Unas\Internal\Client
      * @throws \SzuniSoft\Unas\Exceptions\EventException
      */
-    protected function getClient(array $config)
+    protected function getClient(array $config, $inherit = true)
     {
+        if ($inherit && $this->defaultConfig) {
+
+            $config = array_merge(
+                $this->defaultConfig,
+                $config
+            );
+        }
+
         if (!$this->rememberAllowed) {
             return new Client($config);
         }
@@ -62,12 +79,14 @@ class ClientFactory
      *
      * @param array $config
      *
+     * @param bool  $inherit
+     *
      * @return \SzuniSoft\Unas\Internal\Client
      * @throws \SzuniSoft\Unas\Exceptions\EventException
      */
-    public function create(array $config)
+    public function create(array $config, $inherit = true)
     {
-        return $this->getClient($config);
+        return $this->getClient($config, $inherit);
     }
 
 }

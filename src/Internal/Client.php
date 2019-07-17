@@ -195,7 +195,11 @@ class Client
     protected function sendRequest($uri, $body = [], $headers = [])
     {
         // Setup request payload.
-        $options = [];
+        $options = [
+            'connect_timeout' => 30,
+            'timeout' => 120,
+            'read_timeout' => 120,
+        ];
 
         if (is_array($body)) {
             $options['form_params'] = $body;
@@ -256,7 +260,7 @@ class Client
         }
 
         // Parse response.
-        $body = $response->getBody() ?? null;
+        $body = $response->getBody()->getContents() ?? null;
 
         if ($body) {
 
@@ -318,7 +322,8 @@ class Client
         try {
             $rawResponse = (string)$this
                 ->sendRequest('login', PayloadBuilder::forPremiumAuthorization($this->key))
-                ->getBody();
+                ->getBody()
+                ->getContents();
         }
         catch (RequestException $exception) {
 
@@ -326,7 +331,7 @@ class Client
                 throw $exception;
             }
 
-            $rawResponse = (string)$exception->getResponse()->getBody() ?? null;
+            $rawResponse = (string)$exception->getResponse()->getBody()->getContents() ?? null;
             throw_if(!$rawResponse, $exception);
 
         }
