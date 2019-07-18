@@ -76,6 +76,8 @@ class Client
 
     private $authCode;
 
+    private $debug;
+
     /**
      * Client constructor.
      *
@@ -92,6 +94,7 @@ class Client
         $this->client = $this->makeClient();
         $this->config = $config;
         $this->isPremium = !!($config['key'] ?? false);
+        $this->debug = $config['debug'] ?? false;
 
         if (!$this->isPremium) {
             $this->username = $config['username'];
@@ -200,6 +203,10 @@ class Client
             'timeout' => 120,
             'read_timeout' => 120,
         ];
+
+        if ($this->debug) {
+            $options['debug'] = true;
+        }
 
         if (is_array($body)) {
             $options['form_params'] = $body;

@@ -26,6 +26,9 @@ return [
     // Changing this is not recommended.
     'base_path' => env('UNAS_BASE_PATH', 'https://api.unas.eu/shop/'),
 
+    // Set to true to debug Guzzle client
+    'debug' => false,
+
     // GuzzleHttp timeouts
     'timeouts' => [
 
