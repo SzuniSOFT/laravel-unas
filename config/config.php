@@ -33,11 +33,11 @@ return [
     'timeouts' => [
 
         // @see http://docs.guzzlephp.org/en/stable/request-options.html#connect-timeout
-        'connect_timeout' => 30,
+        'connect_timeout' => env('LARAVEL_UNAS_CONNECT_TIMEOUT', 30),
         // @see http://docs.guzzlephp.org/en/stable/request-options.html#timeout
-        'timeout' => 120,
+        'timeout' => env('LARAVEL_UNAS_TIMEOUT', 120),
         // @see http://docs.guzzlephp.org/en/stable/request-options.html#read-timeout
-        'read_timeout' => 120,
+        'read_timeout' => env('LARAVEL_UNAS_READ_TIMEOUT', 120),
     ],
 
     'events' => [

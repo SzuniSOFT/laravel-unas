@@ -198,11 +198,11 @@ class Client
     protected function sendRequest($uri, $body = [], $headers = [])
     {
         // Setup request payload.
-        $options = [
-            'connect_timeout' => 30,
-            'timeout' => 120,
-            'read_timeout' => 120,
-        ];
+        $options = $this->config['timeouts'] ?? [
+                'connect_timeout' => 30,
+                'timeout' => 120,
+                'read_timeout' => 120,
+            ];
 
         if ($this->debug) {
             $options['debug'] = true;
