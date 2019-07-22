@@ -215,6 +215,10 @@ class Client
             $options['body'] = $body;
         }
 
+        if (isset($this->config['curl']) && !empty($this->config['curl'])) {
+            $options['curl'] = $this->config['curl'];
+        }
+
         // Apply token.
         if ($this->token) {
 
@@ -267,7 +271,7 @@ class Client
         }
 
         // Parse response.
-        $body = $response->getBody()->getContents() ?? null;
+        $body = (string)$response->getBody() ?? null;
 
         if ($body) {
 
@@ -329,8 +333,7 @@ class Client
         try {
             $rawResponse = (string)$this
                 ->sendRequest('login', PayloadBuilder::forPremiumAuthorization($this->key))
-                ->getBody()
-                ->getContents();
+                ->getBody();
         }
         catch (RequestException $exception) {
 
@@ -338,7 +341,7 @@ class Client
                 throw $exception;
             }
 
-            $rawResponse = (string)$exception->getResponse()->getBody()->getContents() ?? null;
+            $rawResponse = (string)$exception->getResponse()->getBody() ?? null;
             throw_if(!$rawResponse, $exception);
 
         }

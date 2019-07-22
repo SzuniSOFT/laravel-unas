@@ -70,7 +70,7 @@ abstract class TestCase extends BaseTestCase
                     ->makePartial();
 
                 $mock
-                    ->shouldReceive('sendRequest->getBody->getContents')
+                    ->shouldReceive('sendRequest->getBody')
                     ->andReturnUsing(function () {
                         return $this->getResponseSnapshot();
                     });

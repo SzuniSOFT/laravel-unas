@@ -40,6 +40,12 @@ return [
         'read_timeout' => env('LARAVEL_UNAS_READ_TIMEOUT', 120),
     ],
 
+    // cURL options passed to Guzzle client.
+    'curl' => [
+        
+    ],
+
+
     'events' => [
 
         // Add or remove events here.
