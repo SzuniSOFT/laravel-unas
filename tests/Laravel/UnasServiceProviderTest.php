@@ -64,7 +64,7 @@ class UnasServiceProviderTest extends BaseTestCase
 
             $mock->shouldReceive('publishes')
                 ->withArgs(function ($paths, $groups) {
-                    return is_string($paths[0]) && $groups === 'config';
+                    return $groups === 'config';
                 })
                 ->once();
         });

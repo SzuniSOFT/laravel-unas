@@ -8,6 +8,7 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use SzuniSoft\Unas\Internal\Client;
+use function config_path;
 
 class UnasServiceProvider extends ServiceProvider
 {
@@ -73,6 +74,8 @@ class UnasServiceProvider extends ServiceProvider
     {
         $configPath = __DIR__ . '/../../../config/config.php';
         $this->mergeConfigFrom($configPath, 'unas');
-        $this->publishes([$configPath], 'config');
+        $this->publishes([
+            $configPath => config_path('unas.php'),
+        ], 'config');
     }
 }
