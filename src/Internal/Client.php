@@ -268,6 +268,10 @@ class Client
             }
 
             $response = $exception->getResponse();
+
+            if (!$response) {
+                throw $exception;
+            }
         }
 
         // Parse response.
